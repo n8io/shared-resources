@@ -1,0 +1,167 @@
+[
+  {
+    "group": "head",
+    "type": "meta",
+    "items": [
+      {
+        "id": "meta-charset",
+        "attributes": {
+          "charset": "utf-8"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "meta-viewport",
+        "attributes": {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "meta-author",
+        "attributes": {
+          "name": "author",
+          "content": "Nate Clark"
+        },
+        "sortOrder": 0
+      }
+    ]
+  },
+  {
+    "group": "head",
+    "type": "link",
+    "items": [
+      {
+        "id": "icon-standard",
+        "attributes": {
+          "rel": "icon",
+          "type": "image/icon",
+          "href": "{{domain}}/img/favicon.ico"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "icon-alt",
+        "attributes": {
+          "rel": "shortcut icon",
+          "type": "image/x-icon",
+          "href": "{{domain}}/img/favicon.png"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "icon-apple-touch",
+        "attributes": {
+          "rel": "apple-touch-icon",
+          "href": "{{domain}}/img/apple-touch-icon.png"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "css-boostrap",
+        "attributes": {
+          "rel": "stylesheet",
+          "href": "{{domain}}/css/bootstrap.min.css"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "css-font-awesome",
+        "attributes": {
+          "rel": "stylesheet",
+          "href": "{{domain}}/css/font-awesome.min.css"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "css-google-font",
+        "attributes": {
+          "rel": "stylesheet",
+          "href": "//fonts.googleapis.com/css?family=Open+Sans:400,700"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "css-io",
+        "attributes": {
+          "rel": "stylesheet",
+          "href": "{{domain}}/css/io.min.css"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "dns-googleapis-ajax",
+        "attributes": {
+          "rel": "dns-prefetch",
+          "href": "//ajax.googleapis.com"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "dns-googleapis-fonts",
+        "attributes": {
+          "rel": "dns-prefetch",
+          "href": "//fonts.googleapis.com"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "dns-iocdn",
+        "attributes": {
+          "rel": "dns-prefetch",
+          "href": "{{domain}}"
+        },
+        "sortOrder": 0
+      }
+    ]
+  },
+  {
+    "group": "body",
+    "type": "script",
+    "items": [
+      {
+        "id": "js-jquery",
+        "attributes": {
+          "src": "//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "js-bootstrap",
+        "attributes": {
+          "src": "{{domain}}/js/bootstrap.min.js"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "js-angular",
+        "attributes": {
+          "src": "//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "js-angular-resource",
+        "attributes": {
+          "src": "//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-resource.min.js"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "js-angular-route",
+        "attributes": {
+          "src": "//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-route.min.js"
+        },
+        "sortOrder": 0
+      },
+      {
+        "id": "js-io",
+        "attributes": {
+          "src": "{{domain}}/js/io.min.js"
+        },
+        "sortOrder": 0
+      }
+    ]
+  }
+]

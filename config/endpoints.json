@@ -1,0 +1,124 @@
+{
+  "comments": "Parameters are case insensitive and can be passed via the query string or request headers. Boolean values can be passed as 1, 0, true or false.",
+  "parameters": [
+    {
+      "name": "culture",
+      "description": "Determines the culture/language in which to display the resulting resources. Defaults to en-US.",
+      "required": false
+    },
+    {
+      "name": "clientId",
+      "description": "The given client identifier.",
+      "required": false
+    },
+    {
+      "name": "userId",
+      "description": "The given user identifier.",
+      "required": true
+    },
+    {
+      "name": "demo",
+      "description": "Whether or not to show the \"Demo\" chevron on the top center of the header. Defaults to 0 (false).",
+      "required": false
+    },
+    {
+      "name": "env",
+      "description": "The environment context to which the resources should be retrieved. Valid values are [local, dev, stg, prod]. Defaults to prod.",
+      "required": false
+    },
+    {
+      "name": "domain",
+      "description": "Overrides ione resource paths that are usually set via \"env\". I.e., myothercdn.example.com or http://force.http.com .",
+      "required": false
+    },
+    {
+      "name": "psid",
+      "description": "The point solution identifier. Valid values are [mat, dmp, dash, analytics, creative, display, search, web, email, mobile].",
+      "required": true
+    },
+    {
+      "name": "pretty",
+      "description": "Whether or not to pretty print resulting html resources. Defaults to 0 (false).",
+      "required": false
+    },
+    {
+      "name": "ttid",
+      "description": "The html template type identifier. Valid values are [jade]. Default value is jade.",
+      "required": false
+    }
+  ],
+  "endpoints": [
+    {
+      "path": "/",
+      "description": "Returns all resource data and compiled html."
+    },
+    {
+      "path": "/html",
+      "description": "Returns all compiled html."
+    },
+    {
+      "path": "/html/meta",
+      "description": "Returns compiled meta html."
+    },
+    {
+      "path": "/html/css",
+      "description": "Returns compiled css html."
+    },
+    {
+      "path": "/html/js",
+      "description": "Returns compiled javascript html."
+    },
+    {
+      "path": "/html/header",
+      "description": "Returns compiled header html."
+    },
+    {
+      "path": "/html/footer",
+      "description": "Returns compiled footer html."
+    },
+    {
+      "path": "/data",
+      "description": "Returns all resource data."
+    },
+    {
+      "path": "/data/meta",
+      "description": "Returns all meta data."
+    },
+    {
+      "path": "/data/css",
+      "description": "Returns all css data."
+    },
+    {
+      "path": "/data/js",
+      "description": "Returns all javascript data."
+    },
+    {
+      "path": "/data/header",
+      "description": "Returns all navigation data."
+    },
+    {
+      "path": "/templates/meta",
+      "description": "Returns all template data that is used to generate the compiled meta html."
+    },
+    {
+      "path": "/templates/css",
+      "description": "Returns all template data that is used to generate the compiled css html."
+    },
+    {
+      "path": "/templates/header",
+      "description": "Returns all template data that is used to generate the compiled header html."
+    },
+    {
+      "path": "/templates/footer",
+      "description": "Returns all template data that is used to generate the compiled footer html."
+    },
+    {
+      "path": "/templates/js",
+      "description": "Returns all template data that is used to generate the compiled js html."
+    },
+    {
+      "path": "/templates",
+      "description": "Returns all template data that is used to generate each set of compiled html."
+    }
+  ]
+}

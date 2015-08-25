@@ -1,0 +1,199 @@
+style.
+  a.account-dropdown:hover,
+  a.account-dropdown:focus,
+  a.account-dropdown:active {
+    text-decoration: none!important;
+    background-color: #4D4D4D!important;
+    color: #FFF!important;
+  }
+.header
+  if header
+    if header.isDemo
+      .demo-indicator
+        .demo-left-angle
+        .demo-text demo
+        .demo-right-angle
+    .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container-fluid.border-top-brand
+        .navbar-header
+          if header.mainNavLink
+            a.navbar-brand(href='/', target='_self')
+          else
+            a.navbar-brand(href='/', target='_self').no-border
+        .navbar-collapse
+          if header.mainNavLink
+            ul.nav.navbar-nav
+              li.dropdown
+                a.dropdown-toggle(href='javascript:;', data-toggle='dropdown')
+                  i.fa(class='#{header.mainNavLink.uiIconClass || ""}').pad-right-10
+                  span.main-nav-label.pad-right-10 #{header.mainNavLink.label}
+                  i.fa.fa-caret-down
+                ul.dropdown-menu.app-drawer
+                  li.dropdown-header Hub
+                  li
+                    ul.pictograph
+                      each link, index in header.hubLinks
+                        li
+                          a(href='#{link.uri||"javacsript:;"}', title='#{link.label}', target='_self').brand-gbo.position-relative
+                            .center-x-y.position-absolute
+                              i.fa.fa-fw(class='#{link.uiIconClass || ""}')
+                              .width-100pct.text-ellipsis #{link.label}
+                    .clearfix
+                  li.divider
+                  li.dropdown-header Channel Management
+                  li
+                    ul.pictograph
+                      each link in header.channelLinks
+                        li
+                          a(href='#{link.uri||"javacsript:;"}', title='#{link.label}', target='_self').brand-gbo.position-relative
+                            .center-x-y.position-absolute
+                              i.fa.fa-fw(class='#{link.uiIconClass || ""}')
+                              .width-100pct #{link.label}
+            ul.nav.navbar-nav.login-info
+              li.float-left
+                a(href='javascript:;',title='Notifications',data-toggle='dropdown').pad-left-10-important.pad-right-10-important
+                  i.fa.fa-fw.fa-bell
+                  .notification-badge.out-of-view.transition-all-500-ease
+                    span(data-ng-show='notifications.length < 10') {{notifications.length}}
+                    span(data-ng-show='notifications.length >= 10').bold +
+                ul.dropdown-menu.pull-right.notification-dropdown.transition-all-300-ease
+                  li(data-ng-repeat="notification in notifications | orderBy:'timestamp':true" data-id='{{notification.timestamp}}').notification-item
+                    a(data-ng-href='{{notification.link}}',data-ng-class='{true:"",false:"cursor-default"}[notification && notification.link && notification.link.length > 0]')
+                      .media
+                        .pull-left.login-thumb.login-thumb-ss(data-ng-if='notification.thumbnail')
+                          img(data-ng-src='{{notification.thumbnail}}').img-rounded.user-profile-image
+                        .media-body.notification-body
+                          .media-header
+                            span.title {{notification.title}}
+                            span.timestamp.pad-left-5(data-timestamp='{{notification.timestamp}}')
+                            .float-right.close(data-ng-click='dismissNotification(notification)') &times;
+                            .clearfix
+                          span {{notification.message}}
+                        .clearfix
+                  li(data-ng-if='!notifications || notifications.length == 0')
+                    a(href='javascript:;')
+                      .media
+                        .media-body.notification-body
+                          .media-header.text-center.line-height-25
+                            span No new notifications
+                            i.fa.fa-fw.fa-frown-o.pad-left-5
+                        .clearfix
+              li.float-left
+                a(href='javascript:;', data-toggle='dropdown').login-thumb.dropdown-toggle
+                  if user && user.email && user.email.length
+                    img(src='',data-user-email='#{user.email[0]}',data-size='40').img-rounded.user-profile-image
+                  else
+                    img(src='//www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y&s=40').img-rounded.user-profile-image
+                ul.dropdown-menu.pull-right
+                  li
+                    a(href='/user', target='_self')
+                      i.fa.fa-fw.fa-user
+                      if user && user.firstName && user.lastName
+                        span.pad-left-5.user-fullname #{user.firstName} #{user.lastName}
+                      else
+                        span.pad-left-5.user-fullname Unknown
+                  li.divider
+                  li
+                    a(href='/user', target='_self')
+                      i.fa.fa-fw.fa-lock
+                      span.pad-left-5 Security
+                  li
+                    a(href='javascript:;', target='_self')
+                      i.fa.fa-fw.fa-life-bouy
+                      span.pad-left-5 Support
+                  li
+                    a(href='#ione-about',data-toggle='modal',target='_self')
+                      i.fa.fa-fw.fa-info-circle
+                      span.pad-left-5 About
+                  li.divider
+                  li
+                    a(href='/logout', target='_self')
+                      i.fa.fa-fw.fa-sign-out
+                      span.pad-left-5 Logout
+      if (header.mainNavLink && header.mainNavLink.items && header.mainNavLink.items.length > 0)
+        .subnavbar.height-30.line-height-30
+          .mgn-left-0.mgn-right-0
+            .float-left.width-100pct
+              ul.subnav.list-unstyled.float-left.mgn-bottom-0-important
+                if user && user.currentContext && user.currentContext.displaylabel && user.access && user.contextSwitchEnabled
+                  li
+                    a(href='#context-switcher', data-toggle='modal', target='_self', title='#{user.currentContext.displaylabel}', style='line-height:21px; border-right: 1px solid rgba(255, 255, 255, 0.5);').pad-left-5.block.width-200.account-dropdown.text-ellipsis.position-relative
+                      i.fa.fa-fw.fa-building-o.color-fff.pad-right-5
+                      span.color-fff #{user.currentContext.displaylabel}
+                each link in header.mainNavLink.items
+                  li(class='#{subNavLink && subNavLink.id === link.id ? "active" : ""}')
+                    a(href='#{link.id}', title='#{link.label}', target='_self')
+                      span #{link.label}
+              .clearfix
+            .clearfix
+      else
+        .subnavbar-placeholder
+    if (header.mainNavLink && header.mainNavLink.items && header.mainNavLink.items.length > 0)
+      .height-80
+    else
+      .height-45
+
+if user
+  | <script type='text/ng-template' id='tenantRow.html'>
+  .items-table-row(data-ng-show='item')
+  .fluid-row
+    a(href='/tenant/{{tenant.id}}', title="{{tenant.label}}", target='_self', data-entity-id='{{tenant.id}}', data-ng-class='{true:"selected",false:""}[curEntityId == item.id]').mgn-left-10.col-md-12.explorer-item-link
+      i.fa.fa-fw.fa-check-square.pad-right-5(data-ng-show="!curEntityId && curTenantId == tenant.id")
+      i.fa.fa-fw.fa-building-o.pad-right-5(data-ng-hide="!curEntityId && curTenantId == tenant.id")
+      span {{tenant.label}}
+  ul(data-ng-show="tenant.entities && tenant.entities.length > 0").list-unstyled.width-100pct
+    li(data-ng-repeat='item in tenant.entities | filter:contextQuery',data-ng-include="'entityRow.html'").pad-left-20
+  | </script>
+  | <script type='text/ng-template' id='entityRow.html'>
+  .items-table-row
+    a(href='/tenant/{{tenant.id}}/entity/{{item.id}}', title="{{item.label}}", target='_self', data-entity-id='{{item.id}}', data-ng-class='{true:"selected",false:""}[curEntityId == item.id]').mgn-left-10.col-md-12.explorer-item-link
+      i.fa.fa-fw.fa-check-square.pad-right-5(data-ng-show="curEntityId == item.id")
+      i.fa.fa-fw.fa-building-o.pad-right-5(data-ng-hide="curEntityId == item.id")
+      span {{item.label}}
+  ul.list-unstyled.width-100pct
+    li(data-ng-repeat='item in item.entities | filter:contextQuery',data-ng-include="'entityRow.html'").pad-left-20
+  | </script>
+  #context-switcher(tabindex='-1',role='dialog').modal.fade
+    .modal-dialog
+      .modal-content
+        if user.currentContext
+          .modal-header
+            button(type='button', data-dismiss='modal', tabindex='-1').close &times;
+            | Select account
+          .modal-body
+            .row
+              .col-xs-12.col-sm-12.col-md-12.col-lg-12(data-ng-show="userAccess")
+                .explorer-border
+                  .explorer-toolbar-wrapper
+                    .input-group.mgn-bottom-0.float-left.explorer-filter
+                      span.input-group-addon
+                        i.fa.fa-fw.fa-search
+                      input#account-search.form-control(type='text', placeholder='search', data-ng-model='contextQuery')
+                    .clearfix
+                  .height-250.overflow-hidden-x
+                    .height-5-important
+                    if user.currentContext.entity
+                      .hide(data-ng-init="curEntityId = '#{user.currentContext.entity.id}'")
+                    if user.currentContext.tenant
+                      .hide(data-ng-init="curTenantId = '#{user.currentContext.tenant.id}'")
+                    input(type='hidden',id='current-entity-id',value='{{curEntityId}}')
+                    ul.list-unstyled.pad-bottom-0.mgn-bottom-0.mgn-right-10.width-100pct(style='margin-left: -5px')
+                      li(data-ng-repeat="tenant in userAccess | filter:contextQuery",data-ng-include="'tenantRow.html'")
+                    .row.height-5-important
+        .modal-footer
+          .float-left.line-height-30
+            span.text-muted Currently selected:
+            span.pad-left-5 #{user.currentContext.displaylabel}
+          button(data-dismiss='modal').btn.btn-default Cancel
+          .clearfix
+#ione-about(tabindex='-1',role='dialog').modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button(data-dismiss='modal').close &times;
+        i.fa.fa-info-circle.pad-right-10
+        span About Nate Clark
+      .modal-body
+        textarea(rows='10').width-100pct
+      .modal-footer
+        button(data-dismiss='modal').btn.btn-default Close

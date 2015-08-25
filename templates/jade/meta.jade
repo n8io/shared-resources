@@ -1,0 +1,7 @@
+mixin metatag(m)
+  - var str = ""
+  for attr,index in m.attributes
+    - str = str + (str.length == 0 ? "" : " ") + index+"=\""+m.attributes[index]+"\""
+  | <meta id="#{m.id}" !{str} />
+each m in meta
+  +metatag(m)

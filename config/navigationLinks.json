@@ -1,0 +1,195 @@
+[
+  {
+    "id": "dash",
+    "label": "Dashboard",
+    "uiIconClass": "fa-dashboard",
+    "isHub": true,
+    "sortOrder": 1,
+    "items": [
+      {
+        "id": "",
+        "label": "Home"
+      }
+    ]
+  },
+  {
+    "id": "analytics",
+    "label": "Analytics",
+    "uiIconClass": "fa-bar-chart-o",
+    "isHub": true,
+    "sortOrder": 2,
+    "items": [
+      {
+        "id": "",
+        "label": "Home"
+      },
+      {
+        "id": "attribution",
+        "label": "Attribution"
+      },
+      {
+        "id": "mediamix",
+        "label": "Media Mix Modeling"
+      }
+    ]
+  },
+  {
+    "id": "dmp",
+    "label": "DMP",
+    "uiIconClass": "fa-group",
+    "isHub": true,
+    "sortOrder": 3,
+    "items": [
+      {
+        "id": "/",
+        "label": "Home"
+      },
+      {
+        "id": "/data/intake",
+        "label": "Data Intake"
+      },
+      {
+        "id": "/audiences",
+        "label": "Audiences"
+      },
+      {
+        "id": "/data/activation",
+        "label": "Data Activation"
+      },
+      {
+        "id": "/analytics",
+        "label": "Analytics"
+      }
+    ]
+  },
+  {
+    "id": "mat",
+    "label": "Orchestrate",
+    "uiIconClass": "icon-io-cascade",
+    "isHub": true,
+    "sortOrder": 4,
+    "items": [
+      {
+        "id": "",
+        "label": "Home"
+      },
+      {
+        "id": "experience",
+        "label": "Example Experience"
+      }
+    ]
+  },
+  {
+    "id": "creative",
+    "label": "Creative",
+    "uiIconClass": "icon-io-palette",
+    "isHub": true,
+    "sortOrder": 5,
+    "items": [
+      {
+        "id": "",
+        "label": "Home"
+      },
+      {
+        "id": "browse",
+        "label": "Browse"
+      },
+      {
+        "id": "example1",
+        "label": "Example Asset"
+      },
+      {
+        "id": "example2",
+        "label": "Example Asset"
+      }
+    ]
+  },
+  {
+    "id": "search",
+    "label": "Search",
+    "uiIconClass": "fa-search",
+    "sortOrder": 1,
+    "items": [
+      {
+        "id": "/",
+        "label": "Media"
+      },
+      {
+        "id": "shopping",
+        "label": "Shopping"
+      },
+      {
+        "id": "optimize",
+        "label": "Optimize"
+      },
+      {
+        "id": "publishers",
+        "label": "Publishers"
+      }
+    ]
+  },
+  {
+    "id": "display",
+    "label": "Display",
+    "uiIconClass": "icon-io-display-ad",
+    "sortOrder": 2,
+    "items": [
+      {
+        "id": "",
+        "label": "Home"
+      },
+      {
+        "id": "campaign",
+        "label": "Campaigns"
+      }
+    ]
+  },
+  {
+    "id": "web",
+    "label": "Website",
+    "uiIconClass": "fa-globe",
+    "sortOrder": 3,
+    "items": [
+      {
+        "id": "",
+        "label": "Home"
+      },
+      {
+        "id": "campaign",
+        "label": "Campaigns"
+      }
+    ]
+  },
+  {
+    "id": "email",
+    "label": "Email",
+    "uiIconClass": "fa-envelope",
+    "sortOrder": 4,
+    "items": [
+      {
+        "id": "",
+        "label": "Home"
+      },
+      {
+        "id": "campaign",
+        "label": "Campaigns"
+      }
+    ]
+  },
+  {
+    "id": "social",
+    "label": "Social",
+    "uiIconClass": "fa-comment-o",
+    "sortOrder": 5,
+    "items": [
+      {
+        "id": "",
+        "label": "Home"
+      },
+      {
+        "id": "campaign",
+        "label": "Campaigns"
+      }
+    ]
+  }
+]

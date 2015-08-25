@@ -1,0 +1,21 @@
+.footer.line-height-30.text-center.font-size-small
+  span &copy;&nbsp;
+  span #{(new Date()).getFullYear()}
+  span &nbsp; Nate Clark. All rights reserved
+  span &nbsp;::&nbsp;
+  a(href='#ione-bugreport',data-toggle='modal',target='_self').line-height-30 Report a bug
+  span &nbsp;::&nbsp;
+  a(href='http://www.ignitionone.com/en/about/privacy.php', target='_privacy').line-height-30 Privacy policy
+
+#ione-bugreport.modal.fade(tabindex='-1',role='dialog')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button(data-dismiss='modal').close &times;
+        i.fa.fa-bug.pad-right-10
+        span Report a bug
+      .modal-body
+        textarea#bug-description(rows='10',data-ng-model='bug.description').form-control
+      .modal-footer
+        button(data-dismiss='modal',data-ng-disabled='!bug.description', data-ng-class='{true:"btn-primary",false:""}[!!bug.description]').btn.btn-default.mgn-right-5 Submit report
+        button(data-dismiss='modal').btn.btn-default Close

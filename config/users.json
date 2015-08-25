@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1",
+    "profileImageUrl": "https://s.gravatar.com/avatar/82cfc887580a95661a0f5819dae1591d?&s=40",
+    "firstName": "John",
+    "lastName": "Demo",
+    "accounts": [
+      { "id": "0", "label": "Acme Client", "role": "admin" },
+      { "id": "1", "label": "Acme Client 2", "role": "admin" },
+      { "id": "2", "label": "Acme Client 3", "role": "admin" },
+      { "id": "3", "label": "Acme Client 4", "role": "admin" },
+      { "id": "4", "label": "Acme Client 5", "role": "admin" },
+      { "id": "5", "label": "Acme Client 6", "role": "admin" }
+    ]
+  },
+  {
+    "id": "2",
+    "profileImageUrl": "",
+    "firstName": "Jane",
+    "lastName": "Demo",
+    "email": "test@test.com",
+    "accounts": [
+      { "id": "0", "label": "Acme Client", "role": "admin" },
+      { "id": "2", "label": "Acme Client 3", "role": "admin" },
+      { "id": "4", "label": "Acme Client 5", "role": "admin" }
+    ]
+  }
+]

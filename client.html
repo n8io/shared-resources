@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Client Side Load Example</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
+  </head>
+  <body data-ng-app="ngApp" data-ng-controller="Master_Controller" class="ng-scope" >
+    <pre class="code"></pre>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $('body').css('display', 'none');
+        $.ajax({
+          method:'get',
+          data: {
+            userid: '1',
+            psid: 'dash',
+            clientid: '1',
+            ttid: null,
+            demo: false,
+            domain: 'http://ione-demo.herokuapp.com',
+            env: null,
+            pretty: false
+          },
+          url: 'http://ione-resources.herokuapp.com',
+          success: function(res){
+            console.log(res);
+            $('head').append(res.html.css);
+            $('body').prepend(res.html.footer);
+            $('body').prepend(res.html.header);
+            $('body').append(res.html.js);
+            setTimeout(function(){ $('body').fadeIn(); $(window).trigger('resize'); }, 500);
+          }
+        });
+      });
+    </script
+  </body>
+</html>

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "local",
+    "domain": "."
+  },
+  {
+    "id": "dev",
+    "domain": "dev-cdn.ignitionone.com"
+  },
+  {
+    "id": "ci",
+    "domain": "s3.amazonaws.com/ione-assets-dev-f22e1146172b-us-east-1"
+  },
+  {
+    "id": "stg",
+    "domain": "stg-cdn.ignitionone.com"
+  },
+  {
+    "id": "prod",
+    "domain": "cdn.ignitionone.com"
+  }
+]
